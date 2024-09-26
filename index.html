@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- AOS CSS for scroll animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  
+  <style>
+    /* Navbar Styling */
+    nav.navbar {
+      background-color: #343a40; /* Dark background */
+    }
+    
+    .navbar-nav .nav-link {
+      color: white !important; /* White text */
+      font-weight: bold;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    .navbar-brand {
+      color: white !important; /* White text for brand */
+    }
+    
+    /* Sticky Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Hero Section */
+    #home {
+      background: linear-gradient(to bottom, rgba(241, 239, 239, 0) 50%, white 100%), 
+                  url('images/1.jpg') no-repeat center center/cover;
+      background-attachment: scroll; /* Keeps the background scrolling */
+      height: 130vh;
+      color: white;
+    }
+    
+    #home h1, #home h2 {
+      color: #030303;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    /* About Section */
+    #about {
+      padding: 60px 0;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #f5cba7 100%);
+    }
+    
+    /* Projects Section */
+    #projects {
+  padding: 60px 0;
+  background: linear-gradient(to bottom, #f5cba7 0%, #ffffff 100%);
+}
+
+.project-image {
+  width: 100%;  /* Ensure the image takes up the full width of the card */
+  height: 200px; /* Fixed height for uniformity */
+  object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
+  border-radius: 5px; /* Optional: Round the edges slightly for a modern look */
+}
+
+.card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+    
+    /* Skills Section */
+    #skills {
+      padding: 60px 0;
+      background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+    }
+    
+    /* Contact Section */
+    #contact {
+      padding: 60px 0;
+      background: linear-gradient(to bottom, #f8f9fa 0%, #343a40 100%);
+      color: white;
+    }
+
+    .social-icons a {
+    font-size: 2rem; /* Adjust the size of the icons */
+    color: #333; /* Color for the icons */
+  }
+  .social-icons a:hover {
+    color: #007bff; /* Hover effect for icons */
+  }
+
+    /* Adjusting Padding */
+    section {
+      padding-top: 60px;
+    }
+</style>
+
+
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#home">Ayan Mukherjee</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#skills">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Home Section -->
+<section id="home" class="d-flex align-items-center">
+  <div class="container text-center">
+    <h1 class="display-4">Welcome to My Portfolio</h1>
+    <h2 class="typing-effect">Data Scientist & Machine Learning Enthusiast</h2>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section">
+  <div class="container text-center">
+    <h2 data-aos="fade-up">About</h2>
+  <img src="images/about/PP.jpg" alt="About Me" data-aos="zoom-in" class="img-fluid rounded-circle mb-4" style="width: 200px;">
+    <p data-aos="fade-up">Hey, I'm Ayan Mukherjee, a data science enthusiast with a passion for turning data into meaningful insights. I love exploring machine learning, deep learning, and all things AI.</p>
+    <p data-aos="fade-up">When I'm not working on data projects, you'll find me exploring new tech trends, experimenting with algorithms, or learning about the latest tools in the field. I'm always eager to grow and take on exciting projects that push the boundaries of what's possible with data!</p>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<!-- Projects Section -->
+<section id="projects" class="projects-section">
+  <div class="container">
+    <h2 data-aos="fade-up">Projects</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4" data-aos="fade-up">
+        <div class="card">
+          <!-- Adjusted Image -->
+          <img src="images/projects/First Project.jpg" class="card-img-top project-image" alt="Project 1">
+          <div class="card-body">
+            <h5 class="card-title">Project 1</h5>
+            <p class="card-text">APS failure prediction uses sensor data to anticipate issues in a truck's air pressure system. By analyzing patterns in data, we can identify early warning signs of component failures, reducing downtime and costs. This predictive maintenance approach helps ensure vehicle safety and efficiency.</p>
+            <a href="https://github.com/ayan-11/questions" target="_blank" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card">
+          <!-- Adjusted Image -->
+          <img src="images/projects/Second Project.jpg" class="card-img-top project-image" alt="Project 2">
+          <div class="card-body">
+            <h5 class="card-title">Project 2</h5>
+            <p class="card-text">This project developed a Random Forest model to accurately predict natural gas prices. The model analyzed historical data on various factors influencing prices. It was evaluated using metrics like MSE and RMSE, demonstrating its effectiveness in predicting future price trends. This project has practical implications for energy stakeholders.</p>
+            <a href="https://github.com/example-link/project-2" target="_blank" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card">
+          <!-- Adjusted Image -->
+          <img src="images/projects/3.jpg" class="card-img-top project-image" alt="Project 3">
+          <div class="card-body">
+            <h5 class="card-title">Project 3</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <a href="https://github.com/example-link/project-3" target="_blank" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Skills Section -->
+<section id="skills" class="skills-section">
+  <div class="container">
+    <h2 data-aos="fade-up">Skills</h2>
+    <div class="row">
+      <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up">
+        <div class="card">
+          <img src="images/skills/python.jpeg" class="card-img-top" alt="Python">
+          <div class="card-body">
+            <h5 class="card-title">Python</h5>
+            <!-- <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up">
+        <div class="card">
+          <img src="images/skills/2.png" class="card-img-top" alt="EDA">
+          <div class="card-body">
+            <h5 class="card-title">EDA</h5>
+            <!-- <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up">
+        <div class="card">
+          <img src="images/skills/3.png" class="card-img-top" alt="Feature Engineering">
+          <div class="card-body">
+            <h5 class="card-title">Feature Engineering</h5>
+            <!-- <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up">
+        <div class="card">
+          <img src="images/skills/4.jpg" class="card-img-top" alt="Machine Learning">
+          <div class="card-body">
+            <h5 class="card-title">Machine Learning</h5>
+            <!-- <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <div class="container text-center">
+    <h2 data-aos="fade-up">Contact Me</h2>
+    <div class="row">
+      <div class="col-lg-12" data-aos="fade-up">
+        <p><i class="fas fa-envelope"></i> ayan02mukherjee@gmail.com</p>
+      </div>
+    </div>
+    <div class="social-icons mt-4 d-flex justify-content-center" data-aos="fade-up">
+      <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" class="social-icon mx-3">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/your-github-profile" target="_blank" class="social-icon mx-3">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- AOS Animation JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init(); // Initialize AOS for scroll animations
+</script>
+</body>
+</html>
