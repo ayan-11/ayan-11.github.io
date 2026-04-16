@@ -345,6 +345,67 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
   AOS.init(); // Initialize AOS for scroll animations
+
+  // Typing effect for headline text
+  const typingPhrases = [
+    'Data Science & Machine Learning Enthusiast',
+    'Building Intelligent Data Solutions',
+    'Exploring AI, Analytics, and Automation'
+  ];
+  const typingElement = document.querySelector('.typing-effect');
+  let typingIndex = 0;
+  let charIndex = 0;
+  let typingForward = true;
+
+  function typeWriter() {
+    if (!typingElement) return;
+
+    const currentPhrase = typingPhrases[typingIndex];
+    if (typingForward) {
+      typingElement.textContent = currentPhrase.slice(0, charIndex + 1);
+      charIndex++;
+      if (charIndex === currentPhrase.length) {
+        typingForward = false;
+        setTimeout(typeWriter, 1500);
+        return;
+      }
+    } else {
+      typingElement.textContent = currentPhrase.slice(0, charIndex - 1);
+      charIndex--;
+      if (charIndex === 0) {
+        typingForward = true;
+        typingIndex = (typingIndex + 1) % typingPhrases.length;
+      }
+    }
+    setTimeout(typeWriter, typingForward ? 120 : 80);
+  }
+
+  // Highlight active nav link while scrolling
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+  function setActiveNavLink() {
+    const scrollPosition = window.scrollY + 80;
+    sections.forEach(section => {
+      const top = section.offsetTop;
+      const bottom = top + section.offsetHeight;
+      const id = section.getAttribute('id');
+      const navLink = document.querySelector(`.navbar-nav .nav-link[href='#${id}']`);
+      if (scrollPosition >= top && scrollPosition < bottom) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        if (navLink) navLink.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    typeWriter();
+    setActiveNavLink();
+  });
+
+  window.addEventListener('scroll', () => {
+    setActiveNavLink();
+  });
 </script>
 </body>
 </html>
