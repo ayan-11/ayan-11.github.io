@@ -1,411 +1,712 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome</title>
-  
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <!-- AOS CSS for scroll animations -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-  
-  <style>
-    /* Navbar Styling */
-    nav.navbar {
-        background-color: #343a40; /* Dark background */
-    }
-    
-    .navbar-nav .nav-link {
-        color: white !important; /* White text */
-        font-weight: bold;
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-    
-    .navbar-brand {
-        color: white !important; /* White text for brand */
-    }
-    
-    /* Sticky Navbar */
-    .navbar {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-    }
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5BB8W2X');</script>
+  <!-- End Google Tag Manager -->
+  <link rel="icon" type="image/png" href="/favicon.png"/>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    /* Smooth scrolling */
-    html {
-        scroll-behavior: smooth;
-    }
+  <title>Personal Portfolio</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
 
-    /* Hero Section */
-    #home {
-        background: linear-gradient(to bottom, rgba(241, 239, 239, 0) 50%, white 100%), 
-                    url('images/1.jpg') no-repeat center center/cover;
-        background-attachment: scroll; /* Keeps the background scrolling */
-        height: 130vh;
-        color: white;
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-        /* Added Flexbox for vertical centering */
-        display: flex;
-        flex-direction: column; /* Align items in a column */
-        justify-content: center; /* Center vertically */
-        align-items: center; /* Center horizontally */
-        text-align: center; /* Center text alignment */
-    }
-    
-    #home h1, #home h2 {
-        color: #7fdac1;
-        text-shadow: 2px 2px 8px rgb(0, 0, 0);
-    }
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
 
-    /* About Section */
-    #about {
-        padding: 60px 0;
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #aef3ce 100%);
-    }
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
 
-    /* Spacing for rows */
-    .row {
-        margin-top: 40px; /* Adds space between the title and the project cards */
-    }
-    
-    /* Projects Section */
-    #projects {
-        padding: 60px 0;
-        background: linear-gradient(to bottom, #aef3ce 0%, #ffffff 100%);
-        margin-bottom: 30px;
-    }
 
-    .project-image {
-        width: 100%;  /* Ensure the image takes up the full width of the card */
-        height: 200px; /* Fixed height for uniformity */
-        object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
-        border-radius: 5px; /* Optional: Round the edges slightly for a modern look */
-    }
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169007209-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-    #projects .row {
-        margin-top: 40px; /* Adds space between the title and the project cards */
-    }
-
-    .card {
-        border: none;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-    
-    /* Skills Section */
-    #skills {
-        padding: 60px 0;
-        background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
-    }
-
-    /* Spacing for rows */
-    .row {
-        margin-top: 40px;
-    }
-    
-    /* Contact Section */
-    #contact {
-        padding: 60px 0;
-        background: linear-gradient(to bottom, #f8f9fa 0%, #000000 100%);
-        color: rgb(0, 0, 0);
-    }
-
-    .social-icons a {
-        font-size: 2rem; /* Adjust the size of the icons */
-        color: #333; /* Color for the icons */
-    }
-
-    .social-icons a:hover {
-        color: #007bff; /* Hover effect for icons */
-    }
-
-    /* Adjusting Padding */
-    section {
-        padding-top: 60px;
-    }
-
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
-
-    .about-section {
-        font-family: 'Poppins', sans-serif; /* Applying custom font */
-        color: #333; /* Darker text color */
-    }
-
-    .about-section h2 {
-        font-weight: 600; /* Bold heading */
-        color: #111; /* Darker heading color */
-    }
-
-    .about-section p {
-        font-weight: 800; /* Semi-bold paragraphs */
-        color: #444; /* Darker paragraph text */
-        line-height: 1.7; /* Increase line height for readability */
-    }
-
-    .about-section img {
-        border: 3px solid #444; /* Darker border around the image */
-    }
-
-    /* Centering Projects and Skills Section Titles */
-    .projects-section h2, .skills-section h2 {
-        text-align: center; /* Center the section titles */
-        font-weight: 700; /* Slightly bolder titles */
-        color: #111; /* Darker color for visibility */
-    }
-</style>
+    gtag('config', 'UA-169007209-3');
+  </script>
 
 
 
+  <!-- =======================================================
+  * Template Name: Personal - v2.1.0
+  * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
+
 <body>
+  
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BB8W2X"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- ======= Header ======= -->
+  <header id="header" class="header-tops">
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="#home">Ayan Mukherjee</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#projects">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#skills">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
-        </li>
-      </ul>
+    <div class="container">
+
+      <h1><a href="index.html">Ayan Mukherjee</a></h1>
+      <h2 style="color:#fff">I'm <span class="typing" style="color:#12D640"></span></h2>
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="#header"> <span>Home</span></a></li>
+          <li><a href="#about"><span>About</span></a></li>
+          <li><a href="#education"> <span>Education</span></a></li>
+          <li><a href="#experience"> <span>Experience</span></a></li>
+<!--          <li><a href="#projects"> <span>Projects</span></a></li>-->
+          <li><a href="#portfolio"> <span>Projects</span></a></li>
+          <li><a href="#skills"> <span>Skills</span></a></li>
+          <li><a href="https://drive.google.com/file/d/1rs-FNaxEnP9yX9bCGAt4j5KsxxEcQY36/view?usp=drive_link" target="_blank"> <span>Resume</span></a></li>
+          <!-- <li><a href="#links"> <span>Resume & Links</span></a></li> -->
+          <li><a href="#contacts"> <span>Contact</span></a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+      <div class="social-links">
+          <a href="https://www.linkedin.com/in/rajaprerak" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://www.github.com/ayan-11" target="_blank" class="github"><i class="bx bxl-github"></i></a>
+          <a href="mailto:ayan02mukherjee@gmail.com" target="_blank" class="google"><i class="bx bxl-google"></i></a>
+
+      </div>
+
     </div>
-  </div>
-</nav>
+  </header><!-- End Header -->
 
-<!-- Home Section -->
-<section id="home" class="d-flex align-items-center">
-  <div class="container text-center">
-    <h1 class="display-4">Welcome to My Portfolio</h1>
-    <h2 class="typing-effect">Data Science & Machine Learning Enthusiast</h2>
-  </div>
-</section>
+  <!-- ======= About Section ======= -->
+  <section id="about" class="about">
 
-<!-- About Section -->
-<section id="about" class="about-section">
-  <div class="container text-center">
-    <h2 data-aos="fade-up">About</h2>
-    <img src="images/about/PP.jpg" alt="About Me" data-aos="zoom-in" class="img-fluid rounded-circle mb-4" style="width: 200px;">
-    <p data-aos="fade-up">Hello! I'm Ayan Mukherjee, a passionate data science enthusiast with a deep interest in turning complex data into actionable insights. My journey in data science started with a fascination for machine learning and artificial intelligence, where I quickly found myself drawn to the limitless possibilities these technologies offer.</p>
-    <p data-aos="fade-up">When I’m not working on data-driven projects, I love exploring the world through different lenses. Photography allows me to capture the beauty around me, whether it's nature or candid moments. I also find joy in cooking, where I experiment with flavors and dishes that blend creativity with science. Playing the keyboard is another passion of mine, providing a peaceful escape through melodies. I also enjoy hitting the gym regularly, as it not only keeps me physically active but also fuels my mental clarity and discipline.</p>
-    <p data-aos="fade-up">I’m constantly eager to learn and evolve, staying up to date with the latest trends and breakthroughs in the field of data science. Whether it's fine-tuning machine learning models or crafting a new recipe, I approach everything with curiosity and a desire to push my own boundaries.</p>
-  </div>
-</section>
+    <!-- ======= About Me ======= -->
+    <div class="about-me container">
 
+      <div class="section-title">
+        <h2>About</h2>
+      </div>
 
-
-<!-- Projects Section -->
-<!-- Projects Section -->
-<section id="projects" class="projects-section">
-  <div class="container">
-    <h2 data-aos="fade-up">Hand's on Experience</h2>
-    <div class="row">
-      <div class="col-md-4 mb-4" data-aos="fade-up">
-        <div class="card">
-          <!-- Adjusted Image -->
-          <img src="images/projects/First Project.jpg" class="card-img-top project-image" alt="Project 1">
-          <!-- This project is implemented with the help of ineuron youtube channel -->
-          <div class="card-body">
-            <h5 class="card-title">Project 1</h5>
-            <p class="card-text">APS failure prediction uses sensor data to anticipate issues in a truck's air pressure system. By analyzing patterns in data, we can identify early warning signs of component failures, reducing downtime and costs. This predictive maintenance approach helps ensure vehicle safety and efficiency.</p>
-            <a href="https://github.com/ayan-11/APS-Failure-Classification" target="_blank" class="btn btn-secondary">Source Code</a>
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+          <img src="assets/img/profile.jpeg" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+          <p>Focused and enthusiastic developer with a keen interest in software development and artificial intelligence. By comprehensive exposure
+            to the underlying concepts and applying them vividly to various projects, my love for these domains came into being.
+            I am a passionate individual who thrives to build and apply algorithms to solve real-world industry problems.
+          </p>
+          <div class="row">
+            <div class="col-lg-6">
+              <ul>
+                <li><i class="icofont-rounded-right"></i> <strong>Birthday:</strong> 11 October 2002</li>
+                <li><i class="icofont-rounded-right"></i> <strong>Phone:</strong> +91 906 840 0339</li>
+              </ul>
+            </div>
+            <div class="col-lg-6">
+              <ul>
+                <li><i class="icofont-rounded-right"></i> <strong>City:</strong> Kolkata, INDIA</li>
+                <li><i class="icofont-rounded-right"></i> <strong>Email:</strong> ayan02mukherjee@gmail.com</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="card">
-          <!-- Adjusted Image -->
-          <img src="images/projects/Second Project.jpg" class="card-img-top project-image" alt="Project 2">
-          <!-- This project is implemented on my own which is the final year project of mine -->
-          <div class="card-body">
-            <h5 class="card-title">Project 2</h5>
-            <p class="card-text">This project developed a Random Forest model to accurately predict natural gas prices. The model analyzed historical data on various factors influencing prices. It was evaluated using metrics like MSE and RMSE, demonstrating its effectiveness in predicting future price trends. This project has practical implications for energy stakeholders.</p>
-            <a href="https://github.com/ayan-11/Natural-Gas-Conservation-Price-Prediction" target="_blank" class="btn btn-secondary">Source Code</a>
+
+    </div><!-- End About Me -->
+
+    <!-- ======= Interests ======= -->
+    <div class="interests container">
+
+      <div class="section-title">
+        <h2>Interests</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-3 col-md-4">
+          <div class="icon-box">
+            <i class="ri-global-line" style="color: #ffbb2c;"></i>
+            <h3>Machine Learning</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box">
+            <i class="ri-database-2-line" style="color: #5578ff;"></i>
+            <h3>Deep Learning</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box">
+            <i class="ri-camera-3-line" style="color: #e80368;"></i>
+            <h3>Computer Vision</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+          <div class="icon-box">
+            <i class="ri-english-input" style="color: #1c7d32;"></i>
+            <h3>Natural Language Processing</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box">
+            <i class="ri-code-s-slash-fill" style="color: #28a745;"></i>
+            <h3>Generative AI</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box">
+            <i class="ri-bar-chart-box-line" style="color: #f1081f;"></i>
+            <h3>Visualization</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box">
+            <i class="ri-file-list-3-line" style="color: #47aeff;"></i>
+            <h3>Algorithms</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box">
+            <i class="ri-image-line" style="color: #ffc107;"></i>
+            <h3>Image Processing</h3>
           </div>
         </div>
       </div>
-      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="card">
-          <!-- Adjusted Image -->
-          <img src="images/projects/3.jpg" class="card-img-top project-image" alt="Project 3">
-          <!-- This project is implemented with the help of ineuron webiste -->
-          <div class="card-body">
-            <h5 class="card-title">Project 3</h5>
-            <p class="card-text">This project develops a deep learning model to classify lung x-ray images into disease categories (e.g., pneumonia, tuberculosis). The model uses a CNN architecture to extract features from the images and make accurate predictions, aiding radiologists in early disease detection and enabling remote healthcare.</p>
-            <a href="https://github.com/ayan-11/end-to-end-chest-x-ray-classification" target="_blank" class="btn btn-secondary">Source Code</a>
+
+    </div><!-- End Interests -->
+  </section><!-- End About Section -->
+
+
+
+  <!-- ======= Education Section ======= -->
+  <section id="education" class="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Education</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-12" data-aos="fade-up" style="display: inline-block;">
+
+
+            <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
+              <img src="assets/img/education/ASU.jpg" class="img-fluid" alt="">
+              <!-- <h4 style="text-align:left;"><a href="https://www.asu.edu/" target="_blank" style="color:#12d640">Arizona State University</a><br> </h4> -->
+              <p style="text-align:left;color:#fff;padding: 5px 10px;"><em>MS in Computer Science</em></p>
+              <h5 style="text-align:left;padding: 0px 10px;">Janurary 2021 - Present</h5>
+              <h6 style="text-align:left;color:#fff;padding: 0px 10px;">Relevant Coursework</h6>
+              <ul style="text-align:left;color:#fff;">
+                <li>Distributed Database Systems</li>
+                <li>Cloud Computing</li>
+                <li>Foundation Of Algorithms</li>
+              </ul>
+            </div>
+            <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
+              <img src="assets/img/education/au.png" class="img-fluid" alt="">
+              <!-- <h4 style="text-align:left;"><a href="https://ahduni.edu.in/" target="_blank" style="color:#12d640">Ahmedabad University</a><br> </h4> -->
+              <p style="text-align:left;color:#fff;padding: 5px 10px;"><em>B.Tech. in Information and Communication Technology</em></p>
+              <h5 style="text-align:left;padding: 0px 10px;">July 2014 - May 2018</h5>
+              <h6 style="text-align:left;color:#fff;padding: 0px 10px;">Relevant Coursework</h6>
+              <ul style="text-align:left;color:#fff;">
+                <!-- <li>Data Structures &amp; Algorithms</li> -->
+                <li>Database Management Systems</li>
+                <!-- <li>Operating Systems</li> -->
+                <li>Algorithms &amp; Optimization for Big Data</li>
+                <li>Machine Learning</li>
+                <!-- <li>Computer Vision</li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <div class="portfolio">
+    <div class="container">
+      <div class="section-title">
+        <h2>Online Certification</h2>
+      </div>
+
+      <div class="row portfolio-container" style="position: relative; height: 437.75px;">
+
+         <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 0px; top: 0px;">
+          <div class="portfolio-wrap">
+            <img src="assets/img/certification/stanford.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Machine Learning</h4>
+              <div class="portfolio-links">
+                <a href="https://drive.google.com/file/d/1J7m_KjzmD6Tf5p79FfNm_ubmJ7sb_Znh/view?usp=sharing" target="_blank" title="Certificate"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+           </div>
+          </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 370px; top: 0px;">
+          <div class="portfolio-wrap">
+            <img src="assets/img/certification/stanford.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Advanced Learning Algorithms</h4>
+              <div class="portfolio-links">
+                <a href="https://drive.google.com/file/d/1obj0C1r9WOQwjAIdZuZ00GSrccoe11w_/view?usp=sharing" target="_blank" title="Certificate"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 740px; top: 0px;">
+          <div class="portfolio-wrap">
+            <img src="assets/img/certification/ucsd.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Pandas</h4>
+              <div class="portfolio-links">
+                <a href="https://drive.google.com/file/d/1Zce23X0x6IGULRiPyCDrNDlM3Jcb3rJ4/view?usp=drive_link" target="_blank" title="Certificate"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-project" style="position: absolute; left: 0px; top: 218.875px;">
+          <div class="portfolio-wrap">
+            <img src="assets/img/certification/ibm.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Deep Learning with Tensorflow</h4>
+              <div class="portfolio-links">
+                <a href="https://drive.google.com/file/d/1FSwPt19EzY_tpvqkE6igtLf3gccKcssC/view?usp=sharing" target="_blank" title="Certificate"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-project" style="position: absolute; left: 370px; top: 218.875px;">
+          <div class="portfolio-wrap">
+            <img src="assets/img/certification/ibm.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Machine Learning with Python</h4>
+              <div class="portfolio-links">
+                <a href="https://drive.google.com/file/d/1gimySw_NPzCJ54dqZ2j2wYyz-JDOg-S0/view?usp=sharing" target="_blank" title="Certificate"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-project" style="position: absolute; left: 740px; top: 218.875px;">
+          <div class="portfolio-wrap">
+            <img src="assets/img/certification/dai.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Neural Networks and Deep Learning</h4>
+              <div class="portfolio-links">
+                <a href="https://www.coursera.org/account/accomplishments/certificate/ELXZ6FE2BU7X?utm_medium=certificate&amp;utm_source=link&amp;utm_campaign=copybutton_certificate/" target="_blank" title="Certificate"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+
+  </section>
+  <!-- End Education Section -->
+
+
+
+  <!-- Start Experience Section -->
+
+  <section id="experience" class="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Experience</h2>
+      </div>
+      <div class="row">
+          <div class="col-lg-12" data-aos="fade-up">
+              <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
+                <h4 style="text-align:left;"><a href="https://www.asu.edu/" style="color:#12d640">Cognizant</a><br> </h4>
+                <h5 style="text-align:left;">November 2025 - Present</h5>
+                <p style="text-align:left;color:#fff"><em>Programmer Analyst Trainee </em></p>
+                <ul style="text-align:left;">
+                  <li>Managed large‑scale deployment of JupyterHub with Nbgrader and webwork software, facilitating approx 5500 students.</li>
+                  <li>Configured, troubleshot, and administered server‑side web applications for the statistics department.</li>
+                  <li>Handled Linux server administration and Apache configuration; automated tasks like user account creation, managing student database, and system maintenance using Shell and automation scripts, reducing manual work by 200%.</li>
+                </ul>
+              </div>
+              <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
+                <h4 style="text-align:left;"><a href="https://www.augmenify.com/" style="color:#12d640">Mahindra Accelo Pvt. Ltd. </a><br> </h4>
+                <h5 style="text-align:left;">April 2025 - July 2025</h5>
+                <p style="text-align:left;color:#fff"><em></em></p>
+                <ul style="text-align:left;">
+                  <li>Analysed over 120 hours of production across 4 manufacturing lines (Blanking, Progressive, CTL & Slitting, Transfer) and identified 7 key manual tasks for optimization, leading to an estimated 18% reduction in process delays and saving approximately 22 man-hours per week.</li>
+                  <li>Developed and enforced 3 Power BI-based dashboards to track production efficiency, defect rates, and downtime; enabled data-driven decisions that boosted shift productivity by 12%, reduced rejection rates by 9.5%, and enhanced maintenance scheduling accuracy by 30%.</li>
+                </ul>
+              </div>
+              <!-- <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
+                <h4 style="text-align:left;"><a href="https://www.epitomesolutions.in/" style="color:#12d640">Epitome Corporation Pvt. Ltd.</a><br> </h4>
+                <h5 style="text-align:left;">July 2019 - Dec 2019</h5>
+                <p style="text-align:left;color:#fff"><em>Software Developer</em></p>
+                <ul style="text-align:left;">
+                  <li>Tested, designed, and developed backend APIs of WebRTC enabled multi‑party video conferencing web application and delivered the project 15 days ahead of schedule by efficiently designing the flow of the project.</li>
+                </ul>
+              </div>
+              <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
+                <h4 style="text-align:left;"><a href="https://www.meditab.com/" target="_blank" style="color:#12d640">Meditab Software Pvt. Ltd.</a><br> </h4>
+                <h5 style="text-align:left;">May 2018 - June 2018</h5>
+                <p style="text-align:left;color:#fff"><em>Programmer Analyst</em></p>
+                <ul style="text-align:left;">
+                  <li>Optimized image processing algorithm of pill detection by creating customized MASKRCNN  algorithm, increasing accuracy by 15%; trained classification algorithm with the help of triplet loss to learn the image embedding of pill, reducing the hassle of collecting data of new pills. </li>
+                  <li>Devised a pipeline of the project to incorporate it into the product of the company. Implemented Restful APIs in Django that enabled our quality Analyst team to increase reporting speed by 46%.</li>
+                  <li>Built a web app to onboard data from the company’s product using Flask, Postgres, and AWS S3, enabling interactive charts in real-time.</li>
+                  <li>Mentored 2 interns to optimize the pill detection algorithm and to include the multiprocessing pipeline, increasing overall speed by 75%.</li>
+                </ul>
+              </div> -->
+              <!-- <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
+                <h4 style="text-align:left;"><a href="https://www.sac.gov.in/Vyom/index.jsp" target="_blank" style="color:#12d640">Space Application Centre, ISRO</a><br> </h4>
+                <h5 style="text-align:left;">Jan 2018 - May 2018</h5>
+                <p style="text-align:left;color:#fff"><em>Research Intern</em></p>
+                <ul style="text-align:left;">
+                  <li>Implemented noise reduction algorithm on the satellite image and prepared architecture for detecting objects in high‑resolution satellite images, achieving 80% accuracy.</li>
+                  <li>Increased accessibility of satellite image data by redesigning database and application for showcasing graphical data.</li>
+                </ul>
+            </div> -->
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- End Experience Section -->
+
+
+
+  <!-- Start Project Section -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Projects</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <ul id="portfolio-flters">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">Machine-Learning</li>
+            <li data-filter=".filter-project">Deep-Learning</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row portfolio-container">
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <center><h4>Twitter Analysis</h4></center>
+          <div class="portfolio-wrap">
+            <img src="assets/img/project/twitteranalysis.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              
+              <div class="portfolio-links">
+                <a href="projects/twitteranalysis.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <center><h4>Image recognition as Service</h4></center>
+          <div class="portfolio-wrap">
+            <img src="assets/img/project/iras.jpeg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              
+              <div class="portfolio-links">
+                <a href="projects/iras.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <center><h4>Music Streaming Website</h4></center>
+          <div class="portfolio-wrap">
+            <img src="assets/img/project/musicplayer.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              
+              <div class="portfolio-links">
+                <a href="projects/musicplayer.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <center><h4>Movie Recommender</h4></center>
+          <div class="portfolio-wrap">
+            <img src="assets/img/project/recommender.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              
+              <div class="portfolio-links">
+                <a href="projects/recommender.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <center><h4>To-Do App</h4></center>
+          <div class="portfolio-wrap">
+            <img src="assets/img/project/todo.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <div class="portfolio-links">
+                <a href="projects/todo.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-project">
+          <!-- <br> -->
+          <center><h4>Resume Section Classifier</h4></center>
+          <div class="portfolio-wrap">
+            <img src="assets/img/project/resume.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Resume Section Classifier</h4>
+              <div class="portfolio-links">
+                <a href="projects/resume.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <br>
+          <center><h4>Tech Blog</h4></center>
+          <div class="portfolio-wrap">
+            <img src="assets/img/project/blog.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <div class="portfolio-links">
+                <a href="projects/blog.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-project">
+          <center><h4>Video Description Generator</h4></center>
+          <div class="portfolio-wrap">
+            <img src="assets/img/project/vdg.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <div class="portfolio-links">
+                <a href="projects/vdg.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <center><h4>ML-DL Web-App</h4></center>
+          <div class="portfolio-wrap">
+            <img src="assets/img/project/ml.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <div class="portfolio-links">
+                <a href="projects/ml.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-project">
+          <!-- <br> -->
+          <center><h4>Image Generator</h4></center>
+          <div class="portfolio-wrap">
+            <img src="assets/img/project/gan.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <div class="portfolio-links">
+                <a href="projects/gan.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- End Project Section -->
+
+
+
+  <!-- Start Skills Section -->
+
+  <section id="skills" class="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Skills</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-12" data-aos="fade-up">
+          <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="background:#fff">
+            <h4 style="text-align:left;color:#09203a">Languages and Databases</h4>
+                <p style="text-align:left;">
+                  <img src="https://www.vectorlogo.zone/logos/python/python-horizontal.svg" alt="vectorlogo.zone" height="50" width="150">
+                  <!-- <img src="https://www.vectorlogo.zone/logos/java/java-horizontal.svg" alt="vectorlogo.zone" height="50" width="120">
+                  <img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-ar21.svg" alt="vectorlogo.zone">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="upload.wikimedia.org" height="60" width="90"> -->
+                  <img src="https://www.vectorlogo.zone/logos/mysql/mysql-horizontal.svg" alt="vectorlogo.zone" height="70" width="130">
+                  <img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-horizontal.svg" alt="vectorlogo.zone" height="50" width="190">
+
+                </p>
+            </div>
+            <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="lefade-up" data-aos-delay="100" style="background:#fff">
+              <h4 style="text-align:left;color:#09203a">Frameworks</h4>
+                <p style="text-align:left;">
+                  <img src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-ar21.svg" alt="vectorlogo.zone">
+                  <!-- <img src="https://www.vectorlogo.zone/logos/djangoproject/djangoproject-ar21.svg" alt="vectorlogo.zone">
+                  <img src="https://www.vectorlogo.zone/logos/nodejs/nodejs-horizontal.svg" alt="vectorlogo.zone">
+                  <img src="https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-ar21.svg" alt="vectorlogo.zone"> -->
+                  <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-ar21.svg" alt="vectorlogo.zone">
+                  <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-ar21.svg" alt="vectorlogo.zone">
+                  <img src="https://www.vectorlogo.zone/logos/opencv/opencv-ar21.svg" alt="vectorlogo.zone">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="upload.wikimedia.org" width="90" height="70">
+              </p>
+          </div>
+          <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="lefade-up" data-aos-delay="100" style="background:#fff">
+              <h4 style="text-align:left;color:#09203a">Tools</h4>
+                <p style="text-align:left;">
+                  <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-ar21.svg" alt="vectorlogo.zone">
+                  <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-ar21.svg" alt="vectorlogo.zone">
+                  <!-- <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-ar21.svg" alt="vectorlogo.zone">
+                  <img src="https://www.vectorlogo.zone/logos/heroku/heroku-ar21.svg" alt="vectorlogo.zone"> -->
+                  <img src="https://www.vectorlogo.zone/logos/jupyter/jupyter-ar21.svg" alt="vectorlogo.zone">
+              </p>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- End Skills Section -->
 
 
 
-<!-- Skills Section -->
-<section id="skills" class="skills-section">
-  <div class="container">
-    <h2 data-aos="fade-up">Skills</h2>
-    <div class="row">
-      <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up">
-        <div class="card">
-          <img src="images/skills/python.jpeg" class="card-img-top" alt="Python">
-          <div class="card-body">
-            <h5 class="card-title">Python</h5>
-            <!-- <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a> -->
-          </div>
-        </div>
+
+  <!-- Start Links section -->
+  <section id="links" class="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Resume & Links</h2>
       </div>
-      <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up">
-        <div class="card">
-          <img src="images/skills/2.png" class="card-img-top" alt="EDA">
-          <div class="card-body">
-            <h5 class="card-title">EDA</h5>
-            <!-- <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a> -->
-          </div>
+      <div class="row">
+        <div class="col-md-3 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
+          <a href="https://drive.google.com/file/d/1rs-FNaxEnP9yX9bCGAt4j5KsxxEcQY36/view?usp=sharing" target="_blank"><div class="icon"><i class="icofont-page"></i></div></a>
+          <h4 class="title"><a href="https://drive.google.com/file/d/1rs-FNaxEnP9yX9bCGAt4j5KsxxEcQY36/view?usp=sharing" target="_blank">Resume</a></h4>
+          <p class="description" style="color:#fff;">The link contains downloadable resume</p>
         </div>
-      </div>
-      <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up">
-        <div class="card">
-          <img src="images/skills/3.png" class="card-img-top" alt="Feature Engineering">
-          <div class="card-body">
-            <h5 class="card-title">Feature Engineering</h5>
-            <!-- <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a> -->
-          </div>
+        <div class="col-md-3 mt-4 mt-md-0 icon-box" data-aos="fade-up">
+          <a href="https://github.com/rajaprerak/LeetCode_Problems" target="_blank"><div class="icon"><i class="icofont-link"></i></div></a>
+          <h4 class="title"><a href="https://github.com/rajaprerak/LeetCode_Problems" target="_blank">LeetCode Repository</a></h4>
+          <p class="description" style="color:#fff;"> The github repository contains leetcode problems solution in python.</p>
         </div>
-      </div>
-      <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up">
-        <div class="card">
-          <img src="images/skills/4.jpg" class="card-img-top" alt="Machine Learning">
-          <div class="card-body">
-            <h5 class="card-title">Machine Learning</h5>
-            <!-- <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a> -->
-          </div>
-        </div>
+        <!-- <div class="col-md-3 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
+          <a href="https://techingenious.herokuapp.com/" target="_blank"><div class="icon"><i class="icofont-page"></i></div></a>
+          <h4 class="title"><a href="https://techingenious.herokuapp.com/" target="_blank">Blog</a></h4>
+          <p class="description" style="color:#fff;">Blog containing articles on AI, coding, development</p>
+        </div> -->
       </div>
     </div>
-  </div>
-</section>
+  </section> <!--End Links Section -->
 
-<!-- Contact Section -->
-<section id="contact" class="contact-section">
-  <div class="container text-center">
-    <h2 data-aos="fade-up">Contact Me</h2>
-    <div class="row">
-      <!-- Uncomment if you want to display email as plain text -->
-      <!-- <div class="col-lg-12" data-aos="fade-up">
-        <p><i class="fas fa-envelope"></i> ayan02mukherjee@gmail.com</p>
-      </div> -->
+
+  <!-- Start Contact Section -->
+
+  <section id="contacts" class="contact">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Contact</h2>
+      </div>
+
+      <div class="row mt-2">
+
+        <div class="col-md-6 d-flex align-items-stretch">
+          <div class="info-box">
+            <i class="bx bx-map"></i>
+            <h3>My Address</h3>
+            <p>1275 E University Dr</p>
+            <p>Unit 212</p>
+            <p>Tempe, AZ 85281</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
+          <div class="info-box">
+            <i class="bx bx-share-alt"></i>
+            <h3>Social Profiles</h3>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/rajaprerak" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              <a href="https://www.github.com/ayan-11" target="_blank" class="github"><i class="bx bxl-github"></i></a>
+              <a href="mailto:ayan02mukherjee@gmail.com" target="_blank" class="google"><i class="bx bxl-google"></i></a>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mt-4 d-flex align-items-stretch">
+          <div class="info-box">
+            <i class="bx bx-envelope"></i>
+            <h3>Email</h3>
+            <p>ayan02mukherjee@gmail.com</p>
+            <!-- <p>pkraja@asu.edu</p> -->
+          </div>
+        </div>
+        <div class="col-md-6 mt-4 d-flex align-items-stretch">
+          <div class="info-box">
+            <i class="bx bx-phone-call"></i>
+            <h3>Contact</h3>
+            <p>+91 960 840 0339</p>
+          </div>
+        </div>
+      </div>
+      <!-- <div id="sfczmlqxr5caww28rswrt8849ghbekgnh3j" ></div><script type="text/javascript" src="https://counter1.stat.ovh/private/counter.js?c=zmlqxr5caww28rswrt8849ghbekgnh3j&down=async" async></script><noscript><a href="https://www.freecounterstat.com" title="free web counter"><img src="https://counter1.stat.ovh/private/freecounterstat.php?c=zmlqxr5caww28rswrt8849ghbekgnh3j" border="0" title="free web counter" alt="free web counter" style="visibility: none;"></a></noscript> -->
     </div>
-    <div class="social-icons mt-4 d-flex justify-content-center" data-aos="fade-up">
-      <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" class="social-icon mx-3">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://github.com/your-github-profile" target="_blank" class="social-icon mx-3">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="mailto:ayan02mukherjee@gmail.com" class="social-icon mx-3">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </div>
-  </div>
-</section>
+  </section>
 
+  <!-- End Contact Section -->
 
-
-<!-- Bootstrap JS and dependencies -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-<!-- AOS Animation JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-  AOS.init(); // Initialize AOS for scroll animations
-
-  // Typing effect for headline text
-  const typingPhrases = [
-    'Data Science & Machine Learning Enthusiast',
-    'Building Intelligent Data Solutions',
-    'Exploring AI, Analytics, and Automation'
-  ];
-  const typingElement = document.querySelector('.typing-effect');
-  let typingIndex = 0;
-  let charIndex = 0;
-  let typingForward = true;
-
-  function typeWriter() {
-    if (!typingElement) return;
-
-    const currentPhrase = typingPhrases[typingIndex];
-    if (typingForward) {
-      typingElement.textContent = currentPhrase.slice(0, charIndex + 1);
-      charIndex++;
-      if (charIndex === currentPhrase.length) {
-        typingForward = false;
-        setTimeout(typeWriter, 1500);
-        return;
-      }
-    } else {
-      typingElement.textContent = currentPhrase.slice(0, charIndex - 1);
-      charIndex--;
-      if (charIndex === 0) {
-        typingForward = true;
-        typingIndex = (typingIndex + 1) % typingPhrases.length;
-      }
-    }
-    setTimeout(typeWriter, typingForward ? 120 : 80);
-  }
-
-  // Highlight active nav link while scrolling
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-
-  function setActiveNavLink() {
-    const scrollPosition = window.scrollY + 80;
-    sections.forEach(section => {
-      const top = section.offsetTop;
-      const bottom = top + section.offsetHeight;
-      const id = section.getAttribute('id');
-      const navLink = document.querySelector(`.navbar-nav .nav-link[href='#${id}']`);
-      if (scrollPosition >= top && scrollPosition < bottom) {
-        navLinks.forEach(link => link.classList.remove('active'));
-        if (navLink) navLink.classList.add('active');
-      }
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/counterup/counterup.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script type="text/javascript">
+    var typed = new Typed('.typing',{
+      strings: ["Coder", "Developer", "AI Enthusiast"],
+      loop: true,
+      typeSpeed: 65,
+      backSpeed: 65
     });
-  }
+  </script>
 
-  window.addEventListener('DOMContentLoaded', () => {
-    typeWriter();
-    setActiveNavLink();
-  });
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
 
-  window.addEventListener('scroll', () => {
-    setActiveNavLink();
-  });
-</script>
 </body>
+
 </html>
